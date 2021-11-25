@@ -1,0 +1,16 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /zendesk/ticket/viewer
+
+spring:
+  application:
+    name: ticketviewer
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+zendesk:
+  api-token: rimn5MRbjcoJQuphF5L6R3Vew12YR20KSmWnHkl7
+  server-url: https://zccrobin.zendesk.com/
+
