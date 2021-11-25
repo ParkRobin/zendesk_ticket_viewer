@@ -1,1 +1,1 @@
-web: java -jar .\target\zendesk_ticket_viewer-1.0-SNAPSHOT.jar com.zendesk.ticketviewer.MainApplication
+web: java -jar \target\zendesk_ticket_viewer-1.0-SNAPSHOT.jar com.zendesk.ticketviewer.MainApplication
