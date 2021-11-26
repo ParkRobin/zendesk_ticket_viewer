@@ -5,6 +5,7 @@ import com.zendesk.ticketviewer.service.TicketService;
 import com.zendesk.ticketviewer.web.response.ResponseData;
 import com.zendesk.ticketviewer.web.response.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +25,7 @@ public class TicketController {
     @Autowired
     private TicketService ticketService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping("")
     public ResponseData<Ticket> getTicket(int id){
         Ticket ticket = ticketService.getTicket(id);
@@ -34,6 +36,7 @@ public class TicketController {
         }
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/list")
     public ResponseData<List<Ticket>> getTicketList(){
         List<Ticket> ticketList = ticketService.getTicketList();
