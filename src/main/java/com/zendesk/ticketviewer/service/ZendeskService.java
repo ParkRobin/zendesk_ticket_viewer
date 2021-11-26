@@ -9,4 +9,6 @@ public interface ZendeskService {
     Ticket getTicket(int id);
 
     List<Ticket> getTicketList();
+
+    String getUserName(String id);
 }

@@ -19,6 +19,7 @@ public class ZendeskServiceImpl implements ZendeskService {
 
     private final static String LIST_REQUEST = "api/v2/requests";
     private final static String SHOW_REQUEST = "api/v2/requests/%s";
+    private final static String USER_REQUEST = "api/v2/users/%s";
 
     @Value("${zendesk.server-url}")
     private String serverUrl;
@@ -60,7 +61,26 @@ public class ZendeskServiceImpl implements ZendeskService {
                 return JsonUtils.fromJson(str, Ticket.class);
             }
         } catch (Exception e) {
-            log.error("get ticket error.", e);
+            log.error("get ticket list error.", e);
+        }
+        return null;
+    }
+
+    public String getUserName(String id) {
+        Request request = new Request.Builder()
+                .url(serverUrl + String.format(USER_REQUEST, id))
+                .header("Content-Type", "application/json")
+                .build();
+        Call call = client.build().newCall(request);
+        try {
+            Response response = call.execute();
+            if(response.isSuccessful()){
+                String jsonString = response.body().string();
+                String userName = JsonUtils.toJsonNode(jsonString).get("user").get("name").textValue();
+                return userName;
+            }
+        } catch (Exception e) {
+            log.error("get user name error.", e);
         }
         return null;
     }
