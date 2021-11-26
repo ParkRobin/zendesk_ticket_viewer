@@ -2,7 +2,7 @@ package com.zendesk.ticketviewer.service.impl;
 
 import com.zendesk.ticketviewer.dao.Ticket;
 import com.zendesk.ticketviewer.service.ZendeskService;
-import com.zendesk.ticketviewer.untils.JsonUtils;
+import com.zendesk.ticketviewer.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;

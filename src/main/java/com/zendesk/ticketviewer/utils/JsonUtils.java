@@ -1,4 +1,4 @@
-package com.zendesk.ticketviewer.untils;
+package com.zendesk.ticketviewer.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.omg.CORBA.Object;
 
 import java.util.ArrayList;
 import java.util.List;
